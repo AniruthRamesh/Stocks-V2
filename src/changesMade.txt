@@ -1,0 +1,28 @@
+savePortfolio() -> no longer uses Json-> uses InputData.InputData
+
+changed controller.start()-> command pattern
+
+removed view.displayInitialOptions() -> broken down into smaller methods
+removed models.getContentsFromfile and another method it uses
+removed models.makeListOfDates()
+
+
+additional interfaces and classes
+Command.Command Interface
+(put every handle functions in controller.start() as separate classes implementing Command.Command
+Interface)
+
+InputData.InputData Interface
+
+
+
+additional View.View Methods
+Ask for which inputDataSource to use
+
+
+packages using:
+reflections
+
+
+/////////////////////////////////////////////////////
+need to change setContainsCertainDate

@@ -144,7 +144,8 @@ public class ModelImpl implements Model{
     try {
       Files.createDirectories(Path.of(Path.of(System.getProperty("user.dir")) + "\\" +
               "portfolios" + "\\"));
-      Path path = Path.of(Path.of(System.getProperty("user.dir")) + "\\" + "portfolios");
+      Path path = Path.of(Path.of(System.getProperty("user.dir")) + "\\" +
+              "ImmutablePortfolios");
       //System.out.println(path.toString());
       for (int i = 0; i < jsonPortfolios.size(); i++) {
         String newPath = String.valueOf(path);
@@ -312,7 +313,7 @@ public class ModelImpl implements Model{
     //Path path = Path.of(Path.of(System.getProperty("user.dir")) + "\\" + "portfolios");
     List<String> files;
     File f = new File(String.valueOf(Path.of(Path.of(System.getProperty("user.dir"))
-            + "\\" + "portfolios")));
+            + "\\" + "ImmutablePortfolios")));
     files = List.of(f.list());
     return files;
   }

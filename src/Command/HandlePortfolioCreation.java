@@ -26,6 +26,7 @@ public class HandlePortfolioCreation implements Command{
     String name = "";
     List<List<String>> dataToAdd = new ArrayList<>();
     String currentDate = model.getCurrentDate();
+    view.displayWarning();
     while (!portfolioOptionExit) {
       int ans;
       view.portfolioCreation();

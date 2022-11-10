@@ -327,4 +327,13 @@ public class View {
             "please look at the documentation");
     this.out.println();
   }
+
+  /**
+   * Displays a method to the user saying there is a new version released.
+   */
+  public void displayWarning() {
+    this.out.println("Warning: You are using older feature of Stocks");
+    this.out.println("If you wish to use Mutable portfolios, have options to use multiple " +
+            "companies, choose the newer version");
+  }
 }

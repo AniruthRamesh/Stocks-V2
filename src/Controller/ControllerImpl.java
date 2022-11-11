@@ -19,7 +19,8 @@ import Model.Model;
 import View.View;
 
 /**
- * This class implements the Controller.Controller interface. It has two main fields of objects of classes
+ * This class implements the Controller.Controller interface. It has two main fields of objects
+ * of classes
  * Model.Model,View.View. This class tells the model to perform calculations, store results and
  * this class tells the view to display certain information.
  */
@@ -31,7 +32,8 @@ public class ControllerImpl implements Controller {
   Command command;
 
   /**
-   * Constructor for the Controller.ControllerImpl class. Initializes the field viewer,models,sc with
+   * Constructor for the Controller.ControllerImpl class. Initializes the field viewer,models,sc
+   * with
    * appropriate parameters.
    *
    * @param models Model.Model object.

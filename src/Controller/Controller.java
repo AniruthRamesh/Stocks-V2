@@ -8,7 +8,8 @@ package Controller;
 public interface Controller {
   /**
    * This method acts as a starting point for the application, it tells the view to display
-   * initial options available for the user, based on the input value, using Command.Command design pattern
+   * initial options available for the user, based on the input value, using Command.Command
+   * design pattern
    * rest of the function is carried out.
    */
   void start();

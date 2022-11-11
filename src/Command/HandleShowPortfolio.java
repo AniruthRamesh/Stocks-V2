@@ -6,6 +6,9 @@ import java.util.Scanner;
 import Model.Model;
 import View.View;
 
+/**
+ * It displays the list of portfolios in the model.
+ */
 public class HandleShowPortfolio implements Command {
   Model model;
   View view;

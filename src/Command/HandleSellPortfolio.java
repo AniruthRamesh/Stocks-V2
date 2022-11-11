@@ -18,6 +18,7 @@ public class HandleSellPortfolio implements Command {
 
   @Override
   public Model execute() {
+
     return model;
   }
 }

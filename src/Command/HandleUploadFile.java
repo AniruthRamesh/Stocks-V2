@@ -7,6 +7,9 @@ import java.util.Scanner;
 import Model.Model;
 import View.View;
 
+/**
+ * It handles the upload file command.
+ */
 public class HandleUploadFile implements Command {
   final Model model;
   final View view;

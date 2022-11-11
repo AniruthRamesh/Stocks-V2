@@ -372,7 +372,7 @@ public class View {
    */
   public void displayCompanyTickerSymbolIsNotValid() {
     this.out.println("Company associated with this ticker symbol doesn't exists. Please input the" +
-            " correct ticket symbol.");
+            " correct ticker symbol.");
     this.out.println();
   }
 }

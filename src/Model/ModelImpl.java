@@ -361,5 +361,8 @@ public class ModelImpl implements Model {
     return companiesInPortfolio.contains(ticker);
   }
 
+  public boolean flexiblePortfolioContainsCertainKey(String name){
+    return flexiblePortfolio.containsKey(name);
+  }
 
 }

@@ -10,6 +10,7 @@ public interface InputDataSource {
   /**
    * This method imposes the classes implementing to pass in an argument for which we need to get
    * data source, return the data as string.
+   *
    * @param companyName String, the company's data needed.
    * @return String, containing the data.
    */

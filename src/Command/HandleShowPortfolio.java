@@ -1,12 +1,12 @@
 package Command;
-import java.io.InputStream;
+
 import java.util.List;
 import java.util.Scanner;
 
 import Model.Model;
 import View.View;
 
-public class HandleShowPortfolio implements Command{
+public class HandleShowPortfolio implements Command {
   Model model;
   View view;
   Scanner sc;

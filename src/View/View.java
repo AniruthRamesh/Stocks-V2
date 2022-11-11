@@ -20,11 +20,12 @@ public class View {
 
   /**
    * A Method to display contents which has numbered, example 1. Display 2.Exit etc.
-   * @param optionNumber integer, option number.
+   *
+   * @param optionNumber  integer, option number.
    * @param needToDisplay String, contents to display for particular option.
    */
-  public void displayWhatIsInParameter(int optionNumber,String needToDisplay){
-   this.out.println(optionNumber+"."+" "+needToDisplay);
+  public void displayWhatIsInParameter(int optionNumber, String needToDisplay) {
+    this.out.println(optionNumber + "." + " " + needToDisplay);
   }
 
   /**

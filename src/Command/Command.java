@@ -1,6 +1,5 @@
 package Command;
-import java.util.Scanner;
-import View.View;
+
 import Model.Model;
 
 /**

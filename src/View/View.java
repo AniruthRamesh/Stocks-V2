@@ -361,8 +361,8 @@ public class View {
    * This function displays the menu for adding a company stock to the portfolio.
    */
   public void displayAddCompanyStockMenu() {
-    this.out.println("1. Enter the ticker symbol of the desired company to but stocks");
-    this.out.println("4.Exit");
+    this.out.println("1. Enter the ticker symbol of the desired company");
+    this.out.println("2. Exit");
     this.out.println();
   }
 

@@ -295,8 +295,7 @@ public class View {
    * @param path The path where the portfolio is saved.
    */
   void displayAllPortfolioSaved(String path) {
-    this.out.println("All the portfolio created have been saved and It is in the location: " +
-            path);
+    this.out.println("All the portfolio created have been saved and It is in the location: " + path);
     this.out.println();
   }
 
@@ -324,8 +323,8 @@ public class View {
    * in proper format.
    */
   public void displayDataNotInProperFormat() {
-    this.out.println("The portfolio provided in the text file is not in proper format," +
-            "please look at the documentation");
+    this.out.println("The portfolio provided in the text file is not in proper format," + "please" +
+            " look at the documentation");
     this.out.println();
   }
 
@@ -337,4 +336,44 @@ public class View {
     this.out.println("If you wish to use Mutable portfolios, have options to use multiple " +
             "companies, choose the newer version");
   }
+
+  /**
+   * It prints out the menu for the user to enter the name of the portfolio.
+   */
+  public void displayPortfolioNameMenu() {
+    this.out.println("1. Enter the name of the portfolio");
+    this.out.println("2. Exit");
+    this.out.println();
+  }
+
+  /**
+   * It prints out the menu for creating a flexible portfolio.
+   */
+  public void displayCreateFlexiblePortfolioMenu() {
+    this.out.println("1. Create new flexible portfolio");
+    this.out.println("2. Edit the existing flexible portfolio");
+    this.out.println("3. Add the company's stock");
+    this.out.println("4.Exit");
+    this.out.println();
+  }
+
+  /**
+   * This function displays the menu for adding a company stock to the portfolio.
+   */
+  public void displayAddCompanyStockMenu() {
+    this.out.println("1. Enter the ticker symbol of the desired company to but stocks");
+    this.out.println("4.Exit");
+    this.out.println();
+  }
+
+  /**
+   * This function displays a message to the user that the company associated with the ticker
+   * symbol they inputted doesn't exist.
+   */
+  public void displayCompanyTickerSymbolIsNotValid() {
+    this.out.println("Company associated with this ticker symbol doesn't exists. Please input the" +
+            " correct ticker symbol.");
+    this.out.println();
+  }
 }
+

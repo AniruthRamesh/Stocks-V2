@@ -15,6 +15,7 @@ public interface Model {
   /**
    * This method returns a list of Strings which is used for displaying Inital options that a user
    * sees when using the applications. If new Features are added, Editing this list alone is enough.
+   *
    * @return List of Strings, contains all the options.
    */
   List<String> getInitialOptions();
@@ -47,8 +48,9 @@ public interface Model {
   /**
    * It sets the portfolio of the user.
    *
-   * @param inflexiblePortfolio A HashMap of the portfolio. The key is the name of the portfolio, and the
-   *                  value is a list of lists.
+   * @param inflexiblePortfolio A HashMap of the portfolio. The key is the name of the portfolio,
+   *                            and the
+   *                            value is a list of lists.
    */
   void setInflexiblePortfolio(Map<String, List<List<String>>> inflexiblePortfolio);
 

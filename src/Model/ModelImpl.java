@@ -43,7 +43,8 @@ public class ModelImpl implements Model{
   List<String> initialOptions = List.of("Create Inflexible Portfolio",
           "Examine Composition of current Portfolio",
           "Fast Forward Time","Determine value of stocks on certain Date","Upload a portfolio",
-          "List all portfolios","Create Flexible Portfolio","Exit");
+          "List all portfolios","Create Flexible Portfolio","Sell Stocks from a Portfolio"
+          ,"Determine Cost Basis" ,"Exit");
 
   @Override
   public List<String> getInitialOptions(){

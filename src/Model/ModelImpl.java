@@ -17,7 +17,7 @@ import java.util.Set;
 
 import OutputDataSource.Json;
 
-public class ModelImpl implements Model{
+public class ModelImpl implements Model {
   List<String> stockCompanies = List.of("AAPL.txt", "AMZN.txt", "ATVI.txt", "BCS.txt",
           "CAJ.txt", "CSCO.txt", "DIS.txt", "JPM.txt", "MCD.txt", "MSFT.txt", "ORCL.txt", "SBUX.txt"
           , "WFC.txt");
@@ -42,12 +42,12 @@ public class ModelImpl implements Model{
 
   List<String> initialOptions = List.of("Create Inflexible Portfolio",
           "Examine Composition of current Portfolio",
-          "Fast Forward Time","Determine value of stocks on certain Date","Upload a portfolio",
-          "List all portfolios","Create Flexible Portfolio","Sell Stocks from a Portfolio"
-          ,"Determine Cost Basis" ,"Exit");
+          "Fast Forward Time", "Determine value of stocks on certain Date", "Upload a portfolio",
+          "List all portfolios", "Create Flexible Portfolio", "Sell Stocks from a Portfolio"
+          , "Determine Cost Basis", "Exit");
 
   @Override
-  public List<String> getInitialOptions(){
+  public List<String> getInitialOptions() {
     return initialOptions;
   }
 
@@ -86,7 +86,7 @@ public class ModelImpl implements Model{
     for (String filepath : stockCompanies) {
       try {
         //change this when building jar file
-        Path path = Path.of(Path.of(System.getProperty("user.dir")) + "\\res\\"+
+        Path path = Path.of(Path.of(System.getProperty("user.dir")) + "\\res\\" +
                 "stockData");
         String files = String.valueOf(path);
 

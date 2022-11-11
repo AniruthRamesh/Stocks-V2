@@ -22,11 +22,11 @@ public class View {
   /**
    * This function displays the option number and the string that is passed as a parameter.
    *
-   * @param optionNumber This is the number of the option that will be displayed.
+   * @param optionNumber  This is the number of the option that will be displayed.
    * @param needToDisplay This is the string that you want to display.
    */
-  public void displayWhatIsInParameter(int optionNumber,String needToDisplay){
-   this.out.println(optionNumber+"."+" "+needToDisplay);
+  public void displayWhatIsInParameter(int optionNumber, String needToDisplay) {
+    this.out.println(optionNumber + "." + " " + needToDisplay);
   }
 
   /**

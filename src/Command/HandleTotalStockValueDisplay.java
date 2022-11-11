@@ -1,4 +1,5 @@
 package Command;
+
 import java.math.BigDecimal;
 import java.util.InputMismatchException;
 import java.util.Objects;
@@ -7,7 +8,7 @@ import java.util.Scanner;
 import Model.Model;
 import View.View;
 
-public class HandleTotalStockValueDisplay implements Command{
+public class HandleTotalStockValueDisplay implements Command {
   Model model;
   View view;
   Scanner sc;

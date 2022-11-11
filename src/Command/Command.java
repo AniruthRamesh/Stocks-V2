@@ -1,10 +1,10 @@
 package Command;
-import java.util.Scanner;
-import View.View;
+
 import Model.Model;
 
 /**
- * This interface acts as a helper interface for our Controller.Controller. We are following Command.Command
+ * This interface acts as a helper interface for our Controller.Controller. We are following
+ * Command.Command
  * design pattern to overcome the problem of having our Controller.Controller polluted with several
  * methods.
  */

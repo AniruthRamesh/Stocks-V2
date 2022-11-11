@@ -51,6 +51,13 @@ public class ModelImpl implements Model {
           "List all portfolios", "Create Flexible Portfolio", "Sell Stocks from a Portfolio"
           , "Determine Cost Basis", "Exit");
 
+  Map<String, List<List<String>>> flexiblePortfolio = new HashMap<>();
+  List<HashMap<String, String>> apiStockData;
+
+  Map<String,Integer> tickerFinder = new HashMap<>();
+
+  Set<String> companiesInPortfolio = new HashSet<>();
+
   @Override
   public List<String> getInitialOptions() {
     return initialOptions;
@@ -339,7 +346,8 @@ public class ModelImpl implements Model {
     }
   }
 
-  String addApiCompanyStockData(String companyTicker) {
+  @Override
+  public String addApiCompanyStockData(String companyTicker) {
     InputDataSource inp = new AlphaVantageAPI();
     String successOrFailure = inp.getData(companyTicker);
     if (successOrFailure.equals(apiErrorMessage)) {
@@ -347,5 +355,11 @@ public class ModelImpl implements Model {
     }
     return successOrFailure;
   }
+
+  @Override
+  public boolean checkIfTickerExists(String ticker){
+    return companiesInPortfolio.contains(ticker);
+  }
+
 
 }

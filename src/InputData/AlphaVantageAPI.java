@@ -5,7 +5,7 @@ import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class AlphaVantageAPI implements InputDataSource{
+public class AlphaVantageAPI implements InputDataSource {
   @Override
   public String getData(String companyName) {
     String apiKey = "1IVNJAFKX4WIOZIK";
@@ -16,9 +16,8 @@ public class AlphaVantageAPI implements InputDataSource{
               + ".co/query?function=TIME_SERIES_DAILY"
               + "&outputsize=full"
               + "&symbol"
-              + "=" + companyName + "&apikey="+apiKey+"&datatype=csv");
-    }
-    catch (MalformedURLException e) {
+              + "=" + companyName + "&apikey=" + apiKey + "&datatype=csv");
+    } catch (MalformedURLException e) {
       return "failure";
     }
     InputStream in;
@@ -28,11 +27,10 @@ public class AlphaVantageAPI implements InputDataSource{
       in = url.openStream();
       int b;
 
-      while ((b=in.read())!=-1) {
-        output.append((char)b);
+      while ((b = in.read()) != -1) {
+        output.append((char) b);
       }
-    }
-    catch (IOException e) {
+    } catch (IOException e) {
       return "failure";
     }
     return output.toString();

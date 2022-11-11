@@ -1,4 +1,5 @@
 package Command;
+
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
@@ -8,7 +9,7 @@ import java.util.Scanner;
 import Model.Model;
 import View.View;
 
-public class HandlePortfolioCreation implements Command{
+public class HandlePortfolioCreation implements Command {
   Model model;
   View view;
   Scanner sc;
@@ -121,7 +122,7 @@ public class HandlePortfolioCreation implements Command{
     double numberOfStocks = 0;
     view.askForCompanyName();
     companyName = sc.nextLine();
-    if(!model.checkIfCompanyExists(companyName)){
+    if (!model.checkIfCompanyExists(companyName)) {
       return null;
     }
     view.askForNumberOfStocks();

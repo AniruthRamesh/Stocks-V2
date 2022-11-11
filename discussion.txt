@@ -42,3 +42,11 @@ Map<String,Integer> tickerFinder; -> use this for finding a company's stockData 
 List<String> companiesInPortfolio -> use this for storing all the companies added in the portfolio and we have data for.
 
 boolean checkIfTickerExists(String ticker);
+
+
+
+
+//added a new field in Model-> apiErrorMessage
+//added a new method in Model to add company stocks -> it gets company ticker symbol from Controller
+model creates a new object of inputHandlingSource(alphavantageapi) and calls this method
+if the company ticker is not valid, returns failure else returns actual contents

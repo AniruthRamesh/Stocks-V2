@@ -20,8 +20,9 @@ import View.View;
 
 /**
  * This class implements the Controller.Controller interface. It has two main fields of objects
- * of classes Model.Model,View.View. This class tells the model to perform calculations, store
- * results and this class tells the view to display certain information.
+ * of classes
+ * Model.Model,View.View. This class tells the model to perform calculations, store results and
+ * this class tells the view to display certain information.
  */
 public class ControllerImpl implements Controller {
   private final InputStream input;
@@ -46,6 +47,7 @@ public class ControllerImpl implements Controller {
     this.input = in;
     this.sc = new Scanner(this.input);
   }
+
 
   public void start() {
     model.createDirectory();

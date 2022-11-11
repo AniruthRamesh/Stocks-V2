@@ -29,10 +29,16 @@ displayCreateFlexiblePortfolioMenu() -> 1.create new portfolio, 2.edit existing,
 							3.add the company's stock, 4.exit
 
 displayAddCompanyStockMenu()-> 1.enter the ticker symbol,ask for date(use existing),2.exit
+displayCompanyTickerSymbolIsNotValid()
+
 ---------------------------------------------------------------------------------------------------
 Model
 ------>Buy portfolio
 Map<String, List<List<String>>> flexiblePortfolio
 List<HashMap<String, String>> apiStockData (storing stock data from api)
-List<>
 
+Map<String,Integer> tickerFinder; -> use this for finding a company's stockData index in apiStockData
+
+List<String> companiesInPortfolio -> use this for storing all the companies added in the portfolio and we have data for.
+
+boolean checkIfTickerExists(String ticker);

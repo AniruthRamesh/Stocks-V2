@@ -232,4 +232,20 @@ public interface Model {
    * Creates a directory in the location of current Working directory.
    */
   void createDirectory();
+
+  /**
+   * This method creates an Object of InputDataSource(with the source which we are using,
+   * currently we are using AlphaVantageAPI)
+   * @param companyTicker String, company ticker symbol to add.
+   * @return String, containing a message "Failure" if the ticker is invalid or the stock data.
+   */
+  String addApiCompanyStockData(String companyTicker);
+
+  /**
+   * This method is used to find, if in the current session we have already bought stocks of that
+   * company
+   * @param ticker String, company's ticker symbol to find.
+   * @return boolean, true if we have that company's stock in the current session.
+   */
+  boolean checkIfTickerExists(String ticker);
 }

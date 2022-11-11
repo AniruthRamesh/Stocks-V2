@@ -39,7 +39,7 @@ List<HashMap<String, String>> apiStockData (storing stock data from api)
 
 Map<String,Integer> tickerFinder; -> use this for finding a company's stockData index in apiStockData
 
-List<String> companiesInPortfolio -> use this for storing all the companies added in the portfolio and we have data for.
+Set<String> companiesInPortfolio -> use this for storing all the companies added in the portfolio and we have data for.
 
 boolean checkIfTickerExists(String ticker);
 

@@ -18,17 +18,19 @@ public class View {
     this.out = out;
   }
 
+
   /**
-   * A Method to display contents which has numbered, example 1. Display 2.Exit etc.
-   * @param optionNumber integer, option number.
-   * @param needToDisplay String, contents to display for particular option.
+   * This function displays the option number and the string that is passed as a parameter.
+   *
+   * @param optionNumber This is the number of the option that will be displayed.
+   * @param needToDisplay This is the string that you want to display.
    */
   public void displayWhatIsInParameter(int optionNumber,String needToDisplay){
    this.out.println(optionNumber+"."+" "+needToDisplay);
   }
 
   /**
-   * Displays only integers are valid values.
+   * This function displays a message to the user asking them to enter only valid integers
    */
   public void displayOnlyIntegers() {
     this.out.println("Enter only valid Integers");

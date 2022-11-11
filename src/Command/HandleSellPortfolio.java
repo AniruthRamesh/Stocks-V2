@@ -16,6 +16,6 @@ public class HandleSellPortfolio implements Command{
   }
   @Override
   public Model execute() {
-    return null;
+    return model;
   }
 }

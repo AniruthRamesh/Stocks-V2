@@ -22,7 +22,7 @@ public class HandlePortfolioComposition implements Command {
 
   @Override
   public Model execute() {
-    Map<String, List<List<String>>> portfolio = model.getPortfolio();
+    Map<String, List<List<String>>> portfolio = model.getInflexiblePortfolio();
 
     if (portfolio.size() == 0) {
       view.displayPortfolioIsEmpty();

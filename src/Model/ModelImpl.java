@@ -38,7 +38,7 @@ public class ModelImpl implements Model{
   Set<String> listOfDates = new HashSet<>();
   String data;
 
-  Map<String, List<List<String>>> portfolio = new HashMap<>();
+  Map<String, List<List<String>>> inflexiblePortfolio = new HashMap<>();
 
   List<String> initialOptions = List.of("Create Inflexible Portfolio",
           "Examine Composition of current Portfolio",
@@ -64,13 +64,13 @@ public class ModelImpl implements Model{
 
   //getter for portfolio
   @Override
-  public Map<String, List<List<String>>> getPortfolio() {
-    return portfolio;
+  public Map<String, List<List<String>>> getInflexiblePortfolio() {
+    return inflexiblePortfolio;
   }
 
   @Override
-  public void setPortfolio(Map<String, List<List<String>>> portfolio) {
-    this.portfolio = portfolio;
+  public void setInflexiblePortfolio(Map<String, List<List<String>>> inflexiblePortfolio) {
+    this.inflexiblePortfolio = inflexiblePortfolio;
   }
 
   //getter for stockCompanyName
@@ -113,7 +113,7 @@ public class ModelImpl implements Model{
 
   @Override
   public boolean hasAnotherPortfolioWithSameName(String name) {
-    return portfolio.containsKey(name);
+    return inflexiblePortfolio.containsKey(name);
   }
 
   @Override
@@ -126,7 +126,7 @@ public class ModelImpl implements Model{
       finalData.add(data);
       data.add(currentDate);
     }
-    portfolio.put(name, finalData);
+    inflexiblePortfolio.put(name, finalData);
   }
 
   @Override
@@ -137,8 +137,8 @@ public class ModelImpl implements Model{
   @Override
   public void savePortfolio() {
     List<String> names = new ArrayList<>();
-    portfolio.forEach((key, value) -> names.add(key));
-    Json json = new Json(this.portfolio, names);
+    inflexiblePortfolio.forEach((key, value) -> names.add(key));
+    Json json = new Json(this.inflexiblePortfolio, names);
 
     List<String> jsonPortfolios = json.FormatFromHashMap();
 
@@ -181,7 +181,7 @@ public class ModelImpl implements Model{
   public double getTotalStockValue(String portfolioName, String currentDate) {
     double ans = 1;
 
-    List<List<String>> contents = portfolio.get(portfolioName);
+    List<List<String>> contents = inflexiblePortfolio.get(portfolioName);
     for (List<String> content : contents) {
       String company = content.get(0);
       double numbers = Double.parseDouble(content.get(1));
@@ -201,12 +201,12 @@ public class ModelImpl implements Model{
 
   @Override
   public int getPortfolioSize() {
-    return portfolio.size();
+    return inflexiblePortfolio.size();
   }
 
   @Override
   public boolean portfolioContainsCertainKey(String name) {
-    return portfolio.containsKey(name);
+    return inflexiblePortfolio.containsKey(name);
   }
 
   @Override
@@ -244,7 +244,7 @@ public class ModelImpl implements Model{
 
   @Override
   public ArrayList<String> getPortfolioKeys() {
-    return new ArrayList<>(portfolio.keySet());
+    return new ArrayList<>(inflexiblePortfolio.keySet());
   }
 
   @Override

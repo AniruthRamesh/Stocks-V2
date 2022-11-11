@@ -38,7 +38,7 @@ public class HandleUploadFile implements Command {
       view.displayDataNotInProperFormat();
       return model;
     }
-    model.setPortfolio(parsedPortfolio);
+    model.setInflexiblePortfolio(parsedPortfolio);
     model.savePortfolio();
     return model;
   }

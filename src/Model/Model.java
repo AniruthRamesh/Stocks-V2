@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 /**
  * This is an interface for stock model.
@@ -43,15 +42,15 @@ public interface Model {
    *
    * @return A HashMap with a String as the key and a List of List of Strings as the value.
    */
-  Map<String, List<List<String>>> getPortfolio();
+  Map<String, List<List<String>>> getInflexiblePortfolio();
 
   /**
    * It sets the portfolio of the user.
    *
-   * @param portfolio A HashMap of the portfolio. The key is the name of the portfolio, and the
+   * @param inflexiblePortfolio A HashMap of the portfolio. The key is the name of the portfolio, and the
    *                  value is a list of lists.
    */
-  void setPortfolio(Map<String, List<List<String>>> portfolio);
+  void setInflexiblePortfolio(Map<String, List<List<String>>> inflexiblePortfolio);
 
 
   /**

@@ -19,6 +19,9 @@ import InputData.AlphaVantageAPI;
 import InputData.InputDataSource;
 import OutputDataSource.Json;
 
+/**
+ * This class is the implementation of the Model interface.
+ */
 public class ModelImpl implements Model {
   List<String> stockCompanies = List.of("AAPL.txt", "AMZN.txt", "ATVI.txt", "BCS.txt",
           "CAJ.txt", "CSCO.txt", "DIS.txt", "JPM.txt", "MCD.txt", "MSFT.txt", "ORCL.txt", "SBUX.txt"
@@ -360,6 +363,4 @@ public class ModelImpl implements Model {
   public boolean checkIfTickerExists(String ticker){
     return companiesInPortfolio.contains(ticker);
   }
-
-
 }

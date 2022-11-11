@@ -8,6 +8,9 @@ import java.util.Scanner;
 import Model.Model;
 import View.View;
 
+/**
+ * It displays the composition of the portfolio.
+ */
 public class HandlePortfolioComposition implements Command {
   final Model model;
   final View view;

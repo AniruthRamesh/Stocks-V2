@@ -18,7 +18,6 @@ public class View {
     this.out = out;
   }
 
-
   /**
    * This function displays the option number and the string that is passed as a parameter.
    *
@@ -30,7 +29,7 @@ public class View {
   }
 
   /**
-   * This function displays a message to the user asking them to enter only valid integers
+   * Displays only integers are valid values.
    */
   public void displayOnlyIntegers() {
     this.out.println("Enter only valid Integers");

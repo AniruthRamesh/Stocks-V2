@@ -12,15 +12,13 @@ import View.View;
  */
 public class Main {
   /**
-   * It creates a new Model.Model, View.View, and Controller.Controller, and then starts the
-   * controller.
-   *
+   * It creates a new Model.Model, View.View, and Controller.Controller, and then starts the controller.
    * @param args accepts a single argument of type String array
    */
   public static void main(String[] args) {
     Model model = new ModelImpl();
     View view = new View(System.out);
-    Controller controller = new ControllerImpl(model, view, System.in);
+    Controller controller = new ControllerImpl(model,view,System.in);
     controller.start();
 
     //change model.getContentsFromFile when building jar

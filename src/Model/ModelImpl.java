@@ -15,6 +15,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import InputData.AlphaVantageAPI;
+import InputData.InputDataSource;
 import OutputDataSource.Json;
 
 public class ModelImpl implements Model {
@@ -26,7 +28,10 @@ public class ModelImpl implements Model {
           , "CANON INC", "CISCO SYSTEMS", "DISNEY", "JP MORGAN", "MCDONALD", "MICROSOFT"
           , "ORACLE", "STARBUCKS", "WELLS FARGO");
 
-
+  String apiErrorMessage = "{\n" +
+          "    \"Error Message\": \"Invalid API call. Please retry or visit the documentation " +
+          "(https://www.alphavantage.co/documentation/) for TIME_SERIES_DAILY.\"\n" +
+          "}";
   //ArrayList of HashMap containing StockData of companies with date as key and stock value on
   //that date as value.
   List<HashMap<String, String>> stockData = new ArrayList<>();
@@ -332,6 +337,15 @@ public class ModelImpl implements Model {
     } catch (IOException e) {
       //
     }
+  }
+
+  String addApiCompanyStockData(String companyTicker) {
+    InputDataSource inp = new AlphaVantageAPI();
+    String successOrFailure = inp.getData(companyTicker);
+    if (successOrFailure.equals(apiErrorMessage)) {
+      return "failure";
+    }
+    return successOrFailure;
   }
 
 }

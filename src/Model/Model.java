@@ -249,4 +249,11 @@ public interface Model {
    * @return boolean, true if we have that company's stock in the current session.
    */
   boolean checkIfTickerExists(String ticker);
+
+  /**
+   * This method is to find if a portfolio is present in the current session.
+   * @param name String, name of the portfolio.
+   * @return boolean, true if list of portfolios has a certain name.
+   */
+  boolean flexiblePortfolioContainsCertainKey(String name);
 }

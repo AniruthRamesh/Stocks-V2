@@ -21,8 +21,10 @@ public class Main {
     Controller controller = new ControllerImpl(model,view,System.in);
     controller.start();
 
-
     //change model.getContentsFromFile when building jar
+    //handle saving uploaded files(while uploading ask if its immutable or not)
+
+    //show list of portfolios shows both flexible and inflexible
   }
 
 }

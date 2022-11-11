@@ -12,6 +12,7 @@ import Command.HandleShowPortfolio;
 import Command.HandleUploadFile;
 import Command.HandlePortfolioComposition;
 import Command.HandleTotalStockValueDisplay;
+import Command.HandleMutablePortfolioCreation;
 import Model.Model;
 import View.View;
 
@@ -84,6 +85,9 @@ public class ControllerImpl implements Controller{
           command = new HandleShowPortfolio(model,view,sc);
           break;
         case 7:
+          command = new HandleMutablePortfolioCreation(model,view,sc);
+          break;
+        case 8:
           initialOptions = true;
           break;
         default:

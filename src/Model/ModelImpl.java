@@ -40,10 +40,10 @@ public class ModelImpl implements Model{
 
   Map<String, List<List<String>>> portfolio = new HashMap<>();
 
-  List<String> initialOptions = List.of("Create Immutable Portfolio",
+  List<String> initialOptions = List.of("Create Inflexible Portfolio",
           "Examine Composition of current Portfolio",
           "Fast Forward Time","Determine value of stocks on certain Date","Upload a portfolio",
-          "List all portfolios","Exit");
+          "List all portfolios","Create Flexible Portfolio","Exit");
 
   @Override
   public List<String> getInitialOptions(){
@@ -145,7 +145,7 @@ public class ModelImpl implements Model{
       Files.createDirectories(Path.of(Path.of(System.getProperty("user.dir")) + "\\" +
               "portfolios" + "\\"));
       Path path = Path.of(Path.of(System.getProperty("user.dir")) + "\\" +
-              "ImmutablePortfolios");
+              "InflexiblePortfolios");
       //System.out.println(path.toString());
       for (int i = 0; i < jsonPortfolios.size(); i++) {
         String newPath = String.valueOf(path);
@@ -313,7 +313,7 @@ public class ModelImpl implements Model{
     //Path path = Path.of(Path.of(System.getProperty("user.dir")) + "\\" + "portfolios");
     List<String> files;
     File f = new File(String.valueOf(Path.of(Path.of(System.getProperty("user.dir"))
-            + "\\" + "ImmutablePortfolios")));
+            + "\\" + "InflexiblePortfolios")));
     files = List.of(f.list());
     return files;
   }
@@ -327,7 +327,7 @@ public class ModelImpl implements Model{
   public void createDirectory() {
     try {
       Files.createDirectories(Path.of(Path.of(System.getProperty("user.dir")) + "\\" +
-              "portfolios" + "\\"));
+              "InflexiblePortfolios" + "\\"));
     } catch (IOException e) {
       //
     }

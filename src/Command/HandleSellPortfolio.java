@@ -79,7 +79,7 @@ public class HandleSellPortfolio implements Command {
 
       switch (ans) {
         case 1:
-          if(handleEnterTickerSymbol()){
+          if (handleEnterTickerSymbol()) {
 
           }
           break;
@@ -94,7 +94,8 @@ public class HandleSellPortfolio implements Command {
 
 
   }
-  public boolean handleEnterTickerSymbol(){
+
+  public boolean handleEnterTickerSymbol() {
     String name;
     view.askForTickerSymbol();
     sc.nextLine();

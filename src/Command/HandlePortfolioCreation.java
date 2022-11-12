@@ -168,8 +168,8 @@ public class HandlePortfolioCreation implements Command {
    * This function takes in a list of lists of strings, a string, and a string, and adds the data to
    * the portfolio.
    *
-   * @param dataToAdd a list of lists of strings, where each list of strings is a row of data.
-   * @param name The name of the portfolio
+   * @param dataToAdd   a list of lists of strings, where each list of strings is a row of data.
+   * @param name        The name of the portfolio
    * @param currentDate the date of the portfolio added
    */
   public void addPortfolioData(List<List<String>> dataToAdd, String name, String currentDate) {

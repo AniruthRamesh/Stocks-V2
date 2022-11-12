@@ -237,6 +237,7 @@ public interface Model {
   /**
    * This method creates an Object of InputDataSource(with the source which we are using,
    * currently we are using AlphaVantageAPI)
+   *
    * @param companyTicker String, company ticker symbol to add.
    * @return String, containing a message "Failure" if the ticker is invalid or the stock data.
    */
@@ -245,6 +246,7 @@ public interface Model {
   /**
    * This method is used to find, if in the current session we have already bought stocks of that
    * company
+   *
    * @param ticker String, company's ticker symbol to find.
    * @return boolean, true if we have that company's stock in the current session.
    */
@@ -252,6 +254,7 @@ public interface Model {
 
   /**
    * This method is to find if a portfolio is present in the current session.
+   *
    * @param name String, name of the portfolio.
    * @return boolean, true if list of portfolios has a certain name.
    */
@@ -261,49 +264,56 @@ public interface Model {
   /**
    * Given a Hashmap containing a company's stock data, add it to the list containing all the
    * data.
+   *
    * @param stockData Hashmap of strings containing the company's stock data.
    */
   void addStockDataToFlexibleList(HashMap<String, String> stockData);
 
   /**
    * This method returns the size of the List of hashmap which contains stock data of companies.
+   *
    * @return Integer, size of the List.
    */
   int getApiStockDataSize();
 
   /**
    * This is a setter for the field tickerFinder.
-   * @param name String, key of the Map.
+   *
+   * @param name   String, key of the Map.
    * @param number Integer, value of the map.
    */
-  void putCompanyNameInTickerFinder(String name,int number);
+  void putCompanyNameInTickerFinder(String name, int number);
 
 
   /**
    * Getter for tickerFinder.
+   *
    * @return Map, String as key and value as Integer representing index in apiStockData.
    */
-  Map<String,Integer> getTickerFinder();
+  Map<String, Integer> getTickerFinder();
 
   /**
    * Getter for apiStockData.
+   *
    * @return List of Hashmap of strings containing stock data of companies.
    */
-  List<HashMap<String,String>> getApiStockData();
+  List<HashMap<String, String>> getApiStockData();
 
 
   /**
    * Getter for flexiblePortfolio hashmap.
+   *
    * @return Map of String, list of list of strings containing portfolio data.
    */
   Map<String, List<List<String>>> getFlexiblePortfolio();
 
   /**
    * Setter for adding a particular company stock details to a portfolio.
-   * @param name String,Portfolio name.
+   *
+   * @param name           String,Portfolio name.
    * @param companyDetails List of List of Strings, containing company stock details.
    */
-  void setterForFlexiblePortfolio(String name,List<List<String>> companyDetails);
+  void setterForFlexiblePortfolio(String name, List<List<String>> companyDetails);
 
   /**
    * Saves all the flexible Portfolios created

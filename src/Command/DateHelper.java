@@ -1,5 +1,5 @@
 package Command;
-import java.math.BigDecimal;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -10,7 +10,8 @@ public class DateHelper {
   View view;
   Model model;
   Scanner sc;
-  public DateHelper(View view, Model model, Scanner sc){
+
+  public DateHelper(View view, Model model, Scanner sc) {
     this.model = model;
     this.sc = sc;
     this.view = view;
@@ -69,7 +70,7 @@ public class DateHelper {
       }
 
       String dateWishToChange = model.makeStringDate(day, month, year);
-      if(model.isValidDate(dateWishToChange)){
+      if (model.isValidDate(dateWishToChange)) {
         date = dateWishToChange;
       }
     } else if (choice == 2) {

@@ -54,19 +54,19 @@ public class ModelImpl implements Model {
   Map<String, List<List<String>>> flexiblePortfolio = new HashMap<>();
   List<HashMap<String, String>> apiStockData = new ArrayList<>();
 
-  Map<String,Integer> tickerFinder = new HashMap<>();
+  Map<String, Integer> tickerFinder = new HashMap<>();
 
   Set<String> companiesInPortfolio = new HashSet<>();
 
-  public Map<String, List<List<String>>> getFlexiblePortfolio(){
+  public Map<String, List<List<String>>> getFlexiblePortfolio() {
     return flexiblePortfolio;
   }
 
-  public Map<String,Integer> getTickerFinder(){
+  public Map<String, Integer> getTickerFinder() {
     return tickerFinder;
   }
 
-  public List<HashMap<String,String>> getApiStockData(){
+  public List<HashMap<String, String>> getApiStockData() {
     return apiStockData;
   }
 
@@ -160,7 +160,7 @@ public class ModelImpl implements Model {
   }
 
   @Override
-  public void saveFlexiblePortfolios(){
+  public void saveFlexiblePortfolios() {
     List<String> names = new ArrayList<>();
     flexiblePortfolio.forEach((key, value) -> names.add(key));
     Json json = new Json(this.flexiblePortfolio, names);
@@ -190,6 +190,7 @@ public class ModelImpl implements Model {
       throw new RuntimeException(e);
     }
   }
+
   @Override
   public void savePortfolio() {
     List<String> names = new ArrayList<>();
@@ -401,31 +402,38 @@ public class ModelImpl implements Model {
   }
 
   @Override
-  public boolean checkIfTickerExists(String ticker){
+  public boolean checkIfTickerExists(String ticker) {
     return companiesInPortfolio.contains(ticker);
   }
 
   @Override
-  public boolean flexiblePortfolioContainsCertainKey(String name){
+  public boolean flexiblePortfolioContainsCertainKey(String name) {
     return flexiblePortfolio.containsKey(name);
   }
 
   @Override
-  public void addStockDataToFlexibleList(HashMap<String, String> stockData){
+  public void addStockDataToFlexibleList(HashMap<String, String> stockData) {
     apiStockData.add(stockData);
   }
 
   @Override
-  public int getApiStockDataSize(){
+  public int getApiStockDataSize() {
     return this.apiStockData.size();
   }
 
-  public void putCompanyNameInTickerFinder(String name,int number){
-    tickerFinder.put(name,number);
+  @Override
+  public void putCompanyNameInTickerFinder(String name, int number) {
+    tickerFinder.put(name, number);
   }
 
-  public void setterForFlexiblePortfolio(String name, List<List<String>> companyDetails){
-    flexiblePortfolio.put(name,companyDetails);
+  @Override
+  public void setterForFlexiblePortfolio(String name, List<List<String>> companyDetails) {
+    flexiblePortfolio.put(name, companyDetails);
+  }
+
+  @Override
+  public void putNameInCompanyInPortfolio(String name) {
+    companiesInPortfolio.add(name);
   }
 
 }

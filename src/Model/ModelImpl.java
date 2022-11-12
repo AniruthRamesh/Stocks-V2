@@ -361,8 +361,23 @@ public class ModelImpl implements Model {
     return companiesInPortfolio.contains(ticker);
   }
 
+  @Override
   public boolean flexiblePortfolioContainsCertainKey(String name){
     return flexiblePortfolio.containsKey(name);
+  }
+
+  @Override
+  public void addStockDataToFlexibleList(HashMap<String, String> stockData){
+    apiStockData.add(stockData);
+  }
+
+  @Override
+  public int getApiStockDataSize(){
+    return this.apiStockData.size();
+  }
+
+  public void putCompanyNameInTickerFinder(String name,int number){
+    tickerFinder.put(name,number);
   }
 
 }

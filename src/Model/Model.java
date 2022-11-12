@@ -256,4 +256,25 @@ public interface Model {
    * @return boolean, true if list of portfolios has a certain name.
    */
   boolean flexiblePortfolioContainsCertainKey(String name);
+
+
+  /**
+   * Given a Hashmap containing a company's stock data, add it to the list containing all the
+   * data.
+   * @param stockData Hashmap of strings containing the company's stock data.
+   */
+  void addStockDataToFlexibleList(HashMap<String, String> stockData);
+
+  /**
+   * This method returns the size of the List of hashmap which contains stock data of companies.
+   * @return Integer, size of the List.
+   */
+  int getApiStockDataSize();
+
+  /**
+   * This is a setter for the field tickerFinder.
+   * @param name String, key of the Map.
+   * @param number Integer, value of the map.
+   */
+  void putCompanyNameInTickerFinder(String name,int number);
 }

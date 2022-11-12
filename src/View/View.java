@@ -376,5 +376,13 @@ public class View {
     this.out.println();
   }
 
+  /**
+   *
+   */
+  public void dateSelectionMenu(){
+    this.out.println("1. Enter the Date");
+    this.out.println("2. Exit");
+  }
+
 }
 

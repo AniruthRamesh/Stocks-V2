@@ -1,5 +1,6 @@
 package Command;
 
+import java.util.HashMap;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -120,8 +121,12 @@ public class HandleMutablePortfolioCreation implements Command {
               view.displayCompanyTickerSymbolIsNotValid();
               break;
             }
-
+            HashMap<String, String> stockData = model.convertingStringToHashMap(mission);
+            model.addStockDataToFlexibleList(stockData);
+            int num = model.getApiStockDataSize();
+            model.putCompanyNameInTickerFinder(companyName,num);
           }
+
           break;
         case 2:
           initialOptions = true;

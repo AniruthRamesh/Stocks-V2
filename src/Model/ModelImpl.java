@@ -421,15 +421,11 @@ public class ModelImpl implements Model {
     return this.apiStockData.size();
   }
 
-<<<<<<< HEAD
   @Override
-=======
->>>>>>> a65f0b9a5148f39180d679985310b1121ee6932d
   public void putCompanyNameInTickerFinder(String name, int number) {
     tickerFinder.put(name, number);
   }
 
-<<<<<<< HEAD
   @Override
   public void setterForFlexiblePortfolio(String name, List<List<String>> companyDetails) {
     flexiblePortfolio.put(name, companyDetails);
@@ -438,10 +434,6 @@ public class ModelImpl implements Model {
   @Override
   public void putNameInCompanyInPortfolio(String name) {
     companiesInPortfolio.add(name);
-=======
-  public void setterForFlexiblePortfolio(String name, List<List<String>> companyDetails) {
-    flexiblePortfolio.put(name, companyDetails);
->>>>>>> a65f0b9a5148f39180d679985310b1121ee6932d
   }
 
 }

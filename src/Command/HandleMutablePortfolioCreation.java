@@ -124,8 +124,12 @@ public class HandleMutablePortfolioCreation implements Command {
 
             model.addStockDataToFlexibleList(stockData);
             int num = model.getApiStockDataSize();
+<<<<<<< HEAD
             model.putNameInCompanyInPortfolio(companyName);
             model.putCompanyNameInTickerFinder(companyName, num-1);
+=======
+            model.putCompanyNameInTickerFinder(companyName, num);
+>>>>>>> a65f0b9a5148f39180d679985310b1121ee6932d
           } else {
             int ind = model.getTickerFinder().get(companyName);
             stockData = model.getApiStockData().get(ind);

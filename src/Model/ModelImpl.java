@@ -52,11 +52,24 @@ public class ModelImpl implements Model {
           , "Determine Cost Basis", "Exit");
 
   Map<String, List<List<String>>> flexiblePortfolio = new HashMap<>();
-  List<HashMap<String, String>> apiStockData;
+  List<HashMap<String, String>> apiStockData = new ArrayList<>();
 
   Map<String,Integer> tickerFinder = new HashMap<>();
 
   Set<String> companiesInPortfolio = new HashSet<>();
+
+  public Map<String, List<List<String>>> getFlexiblePortfolio(){
+    return flexiblePortfolio;
+  }
+
+  public Map<String,Integer> getTickerFinder(){
+    return tickerFinder;
+  }
+
+  public List<HashMap<String,String>> getApiStockData(){
+    return apiStockData;
+  }
+
 
   @Override
   public List<String> getInitialOptions() {
@@ -147,6 +160,37 @@ public class ModelImpl implements Model {
   }
 
   @Override
+  public void saveFlexiblePortfolios(){
+    List<String> names = new ArrayList<>();
+    flexiblePortfolio.forEach((key, value) -> names.add(key));
+    Json json = new Json(this.flexiblePortfolio, names);
+
+    List<String> jsonPortfolios = json.FormatFromHashMap();
+
+    try {
+      Files.createDirectories(Path.of(Path.of(System.getProperty("user.dir")) + "\\" +
+              "FlexiblePortfolios" + "\\"));
+      Path path = Path.of(Path.of(System.getProperty("user.dir")) + "\\" +
+              "flexiblePortfolios");
+      //System.out.println(path.toString());
+      for (int i = 0; i < jsonPortfolios.size(); i++) {
+        String newPath = String.valueOf(path);
+        newPath += "\\" + names.get(i);
+        newPath += ".txt";
+        try {
+          File myObj = new File(newPath);
+          Files.writeString(Path.of(newPath), jsonPortfolios.get(i));
+        } catch (FileNotFoundException e) {
+          //handled
+        } catch (IOException e) {
+          //
+        }
+      }
+    } catch (IOException e) {
+      throw new RuntimeException(e);
+    }
+  }
+  @Override
   public void savePortfolio() {
     List<String> names = new ArrayList<>();
     inflexiblePortfolio.forEach((key, value) -> names.add(key));
@@ -156,7 +200,7 @@ public class ModelImpl implements Model {
 
     try {
       Files.createDirectories(Path.of(Path.of(System.getProperty("user.dir")) + "\\" +
-              "portfolios" + "\\"));
+              "InflexiblePortfolios" + "\\"));
       Path path = Path.of(Path.of(System.getProperty("user.dir")) + "\\" +
               "InflexiblePortfolios");
       //System.out.println(path.toString());
@@ -378,6 +422,10 @@ public class ModelImpl implements Model {
 
   public void putCompanyNameInTickerFinder(String name,int number){
     tickerFinder.put(name,number);
+  }
+
+  public void setterForFlexiblePortfolio(String name, List<List<String>> companyDetails){
+    flexiblePortfolio.put(name,companyDetails);
   }
 
 }

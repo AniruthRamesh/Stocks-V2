@@ -99,6 +99,7 @@ public class ControllerImpl implements Controller {
           initialOptions = true;
           break;
         default:
+          command = null;
           view.displaySwitchCaseDefault();
           break;
       }

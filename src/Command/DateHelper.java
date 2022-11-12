@@ -10,7 +10,9 @@ public class DateHelper {
   View view;
   Model model;
   Scanner sc;
-  public DateHelper(View view){
+  public DateHelper(View view, Model model, Scanner sc){
+    this.model = model;
+    this.sc = sc;
     this.view = view;
   }
 

@@ -277,4 +277,36 @@ public interface Model {
    * @param number Integer, value of the map.
    */
   void putCompanyNameInTickerFinder(String name,int number);
+
+
+  /**
+   * Getter for tickerFinder.
+   * @return Map, String as key and value as Integer representing index in apiStockData.
+   */
+  Map<String,Integer> getTickerFinder();
+
+  /**
+   * Getter for apiStockData.
+   * @return List of Hashmap of strings containing stock data of companies.
+   */
+  List<HashMap<String,String>> getApiStockData();
+
+
+  /**
+   * Getter for flexiblePortfolio hashmap.
+   * @return Map of String, list of list of strings containing portfolio data.
+   */
+  Map<String, List<List<String>>> getFlexiblePortfolio();
+
+  /**
+   * Setter for adding a particular company stock details to a portfolio.
+   * @param name String,Portfolio name.
+   * @param companyDetails List of List of Strings, containing company stock details.
+   */
+  void setterForFlexiblePortfolio(String name,List<List<String>> companyDetails);
+
+  /**
+   * Saves all the flexible Portfolios created
+   */
+  void saveFlexiblePortfolios();
 }

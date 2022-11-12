@@ -323,8 +323,8 @@ public class View {
    * in proper format.
    */
   public void displayDataNotInProperFormat() {
-    this.out.println("The portfolio provided in the text file is not in proper format," + "please" +
-            " look at the documentation");
+    this.out.println("The portfolio provided in the text file is not in proper format," + "please"
+            + " look at the documentation");
     this.out.println();
   }
 
@@ -353,7 +353,7 @@ public class View {
     this.out.println("1. Create new flexible portfolio");
     this.out.println("2. Edit the existing flexible portfolio");
     this.out.println("3. Add the company's stock");
-    this.out.println("4.Exit");
+    this.out.println("4. Exit");
     this.out.println();
   }
 
@@ -361,8 +361,8 @@ public class View {
    * This function displays the menu for adding a company stock to the portfolio.
    */
   public void displayAddCompanyStockMenu() {
-    this.out.println("1. Enter the ticker symbol of the desired company to but stocks");
-    this.out.println("4.Exit");
+    this.out.println("1. Enter the ticker symbol of the desired company.");
+    this.out.println("2. Exit");
     this.out.println();
   }
 
@@ -371,8 +371,14 @@ public class View {
    * symbol they inputted doesn't exist.
    */
   public void displayCompanyTickerSymbolIsNotValid() {
-    this.out.println("Company associated with this ticker symbol doesn't exists. Please input the" +
-            " correct ticker symbol.");
+    this.out.println("Company associated with this ticker symbol doesn't exists. Please input " +
+            "the" + " correct ticker symbol.");
+    this.out.println();
+  }
+
+  // Asking the user to enter the ticker symbol of the company.
+  public void askForTickerSymbol() {
+    this.out.println("Enter ticker symbol for the company:");
     this.out.println();
   }
 }

@@ -21,8 +21,6 @@ public class HandleSellPortfolio implements Command {
     boolean portfolioOptionExit = false;
     boolean nameEntered = false;
     String name = "";
-    String currentDate = model.getCurrentDate();
-
 
     while (!portfolioOptionExit) {
       int ans;
@@ -35,7 +33,7 @@ public class HandleSellPortfolio implements Command {
           if (name.length() != 0) {
             nameEntered = true;
           }
-          if(nameEntered) {
+          if (nameEntered) {
             handleSellPortfolioOptions();
             portfolioOptionExit = true;
             break;
@@ -69,7 +67,38 @@ public class HandleSellPortfolio implements Command {
     }
     return name;
   }
-  public void handleSellPortfolioOptions(){
-    view.displayAddCompanyStockMenu();
+
+  public void handleSellPortfolioOptions() {
+    String currentDate = model.getCurrentDate();
+    boolean optionExit = false;
+
+    while (!optionExit) {
+      int ans;
+      view.displayAddCompanyStockMenu();
+      ans = sc.nextInt();
+
+      switch (ans) {
+        case 1:
+          if(handleEnterTickerSymbol()){
+
+          }
+          break;
+        case 2:
+
+          break;
+        default:
+          view.displaySwitchCaseDefault();
+          break;
+      }
+    }
+
+
+  }
+  public boolean handleEnterTickerSymbol(){
+    String name;
+    view.askForTickerSymbol();
+    sc.nextLine();
+    name = sc.nextLine();
+    return model.checkIfTickerExists(name);
   }
 }

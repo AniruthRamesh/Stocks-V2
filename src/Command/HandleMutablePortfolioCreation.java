@@ -1,7 +1,10 @@
 package Command;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.InputMismatchException;
+import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 import Model.Model;
@@ -52,10 +55,11 @@ public class HandleMutablePortfolioCreation implements Command {
             view.displayNameCannotBeEmpty();
             break;
           }
-          handleAddApiCompanyStock();
+          handleAddApiCompanyStock(name);
           break;
         case 4:
           initialOptions = true;
+          model.saveFlexiblePortfolios();
           //save immutable portfolio (add this in model Interface also)
           break;
         default:
@@ -94,9 +98,10 @@ public class HandleMutablePortfolioCreation implements Command {
     return name;
   }
 
-  void handleAddApiCompanyStock(){
+  void handleAddApiCompanyStock(String portfolioName){
     boolean initialOptions = false;
     int choice;
+    HashMap<String, String> stockData;
     while(!initialOptions){
       view.displayAddCompanyStockMenu();
       try{
@@ -111,21 +116,69 @@ public class HandleMutablePortfolioCreation implements Command {
         case 1:
           sc.nextLine();
           String companyName = sc.nextLine();
+
           if(!model.checkIfTickerExists(companyName)){
             String mission = model.addApiCompanyStockData(companyName);
             if(mission.equals("failure")){
               view.displayCompanyTickerSymbolIsNotValid();
               break;
             }
-            HashMap<String, String> stockData = model.convertingStringToHashMap(mission);
+            stockData = model.convertingStringToHashMap(mission);
+
             model.addStockDataToFlexibleList(stockData);
             int num = model.getApiStockDataSize();
             model.putCompanyNameInTickerFinder(companyName,num);
           }
-
+          else{
+            int ind = model.getTickerFinder().get(companyName);
+            stockData = model.getApiStockData().get(ind);
+          }
+          DateHelper date = new DateHelper(view,model,sc);
+          String dateVal = date.helper();
+          if(dateVal.length()==0){
+            continue;
+          }
+          view.askForNumberOfStocks();
+          Double numberOfStocks = 0.0;
+          try{
+            numberOfStocks = sc.nextDouble();
+          }
+          catch (InputMismatchException e){
+            view.displayOnlyIntegers();
+            sc.next();
+            continue;
+          }
+          if(numberOfStocks<=0){
+            view.displayStockNumberCannotBeLessThanOrEqualToZero();
+            break;
+          }
+          numberOfStocks = model.helper(numberOfStocks);
+          if(stockData.containsKey(dateVal)){
+            Map<String, List<List<String>>> flexiblePortfolio = model.getFlexiblePortfolio();
+            if(flexiblePortfolio.containsKey(portfolioName)){
+              List<List<String>> existing = new ArrayList<>();
+              List<List<String>> anotherExisting = flexiblePortfolio.get(portfolioName);
+              for(int i=0;i<anotherExisting.size();i++){
+                existing.add(anotherExisting.get(i));
+              }
+              existing.add(List.of(companyName,
+                      String.valueOf(numberOfStocks),dateVal));
+              model.setterForFlexiblePortfolio(portfolioName,existing);
+            }
+            else{
+              model.setterForFlexiblePortfolio(portfolioName,List.of(List.of(companyName,
+                      String.valueOf(numberOfStocks),dateVal)));
+            }
+          }
+          else{
+           view.displayNoStockDataForGivenDate();
+          }
           break;
         case 2:
           initialOptions = true;
+          break;
+        default:
+          view.displaySwitchCaseDefault();
           break;
       }
     }

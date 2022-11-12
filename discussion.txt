@@ -9,6 +9,7 @@ Buy flexible Portfolios
   1. Enter the ticker symbol (check if we have data of that same ticker symbol, else
 	add it after and buy the stocks)
    then Get the date (check if we have data for that date)
+   then get number of stocks
   2. Exit
 (save the portfolio in mutable portfolio folder)
 4.Exit

@@ -379,7 +379,7 @@ public class View {
   /**
    *
    */
-  public void dateSelectionMenu(){
+  public void dateSelectionMenu() {
     this.out.println("1. Enter the Date");
     this.out.println("2. Exit");
   }

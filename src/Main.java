@@ -29,6 +29,8 @@ public class Main {
     //show list of portfolios shows both flexible and inflexible
 
     //change the save method in HandleImmutablePortfolio
+    //change the upload file method
+    //in the current session files in the folder should be loaded
   }
 
 }

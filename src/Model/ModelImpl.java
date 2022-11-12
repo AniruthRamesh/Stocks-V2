@@ -421,12 +421,19 @@ public class ModelImpl implements Model {
     return this.apiStockData.size();
   }
 
+  @Override
   public void putCompanyNameInTickerFinder(String name, int number) {
     tickerFinder.put(name, number);
   }
 
+  @Override
   public void setterForFlexiblePortfolio(String name, List<List<String>> companyDetails) {
     flexiblePortfolio.put(name, companyDetails);
+  }
+
+  @Override
+  public void putNameInCompanyInPortfolio(String name) {
+    companiesInPortfolio.add(name);
   }
 
 }

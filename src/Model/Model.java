@@ -319,4 +319,12 @@ public interface Model {
    * Saves all the flexible Portfolios created
    */
   void saveFlexiblePortfolios();
+
+  /**
+   * Setter for the companyNameInPortfolio,adds the parameter to the set.
+   *
+   * @param name String, name of the company to add.
+   */
+  void putNameInCompanyInPortfolio(String name);
+
 }

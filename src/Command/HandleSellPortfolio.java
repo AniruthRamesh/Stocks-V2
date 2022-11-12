@@ -1,5 +1,6 @@
 package Command;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import Model.Model;
@@ -61,7 +62,7 @@ public class HandleSellPortfolio implements Command {
       view.displayNameCannotBeEmpty();
       name = "";
     }
-    if (!model.portfolioContainsCertainKey(name)) {
+    if (!model.flexiblePortfolioContainsCertainKey(name)) {
       view.displayNoPortfolio();
       name = "";
     }
@@ -79,12 +80,18 @@ public class HandleSellPortfolio implements Command {
 
       switch (ans) {
         case 1:
-          if (handleEnterTickerSymbol()) {
-
+          String name;
+          view.askForTickerSymbol();
+          sc.nextLine();
+          name = sc.nextLine();
+          if (handleEnterTickerSymbol(name)) {
+            handleDateSelection(name);
+          } else {
+            view.displayCompanyTickerSymbolIsNotValid();
           }
           break;
         case 2:
-
+          optionExit = true;
           break;
         default:
           view.displaySwitchCaseDefault();
@@ -95,11 +102,81 @@ public class HandleSellPortfolio implements Command {
 
   }
 
-  public boolean handleEnterTickerSymbol() {
-    String name;
-    view.askForTickerSymbol();
-    sc.nextLine();
-    name = sc.nextLine();
+  public boolean handleEnterTickerSymbol(String name) {
+
     return model.checkIfTickerExists(name);
+  }
+
+  public void handleDateSelection(String portfolioName) {
+    int choice;
+    view.displaySelectDateOption(model.getCurrentDate());
+    try {
+      choice = sc.nextInt();
+    } catch (InputMismatchException e) {
+      view.displayOnlyIntegers();
+      sc.next();
+      return;
+    }
+
+    if (choice == 1) {
+      int day;
+      int month;
+      int year;
+      view.askForDayOfTheMonth();
+      try {
+        day = sc.nextInt();
+      } catch (InputMismatchException e) {
+        view.displayOnlyIntegers();
+        sc.next();
+        return;
+      }
+      if (day > 31 || day == 0) {
+        view.displayEnterValidDetailsForDate();
+        return;
+      }
+      view.askForMonth();
+      try {
+        month = sc.nextInt();
+      } catch (InputMismatchException e) {
+        view.displayOnlyIntegers();
+        sc.next();
+        return;
+      }
+      if (month > 12 || month == 0) {
+        view.displayEnterValidDetailsForDate();
+        return;
+      }
+      view.askForYear();
+      try {
+        year = sc.nextInt();
+      } catch (InputMismatchException e) {
+        view.displayOnlyIntegers();
+        sc.next();
+        return;
+      }
+      if (year > 2022 || year < 2001) {
+        view.displayEnterValidDetailsForDate();
+        return;
+      }
+
+      String dateWishToChange = model.makeStringDate(day, month, year);
+
+      boolean checker1 = model.isValidDate(dateWishToChange);
+      if (checker1) {
+        //check if date exist
+        boolean checker = model.setContainsGivenDate(dateWishToChange);
+        if (checker) {
+          System.out.println("sssssssssssssssssssssssssss");
+        } else {
+          view.displayNoStockDataForGivenDate();
+        }
+      } else {
+        view.displayDateIsNotValid();
+      }
+    } else if (choice == 2) {
+      //
+    } else {
+      view.displaySwitchCaseDefault();
+    }
   }
 }

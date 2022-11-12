@@ -89,6 +89,13 @@ public class HandlePortfolioCreation implements Command {
     return model;
   }
 
+  /**
+   * It asks the user to enter a name for the portfolio, and if the name is empty or if the
+   * portfolio already contains a portfolio with the same name, it asks the user to enter a name
+   * again.
+   *
+   * @return The name of the portfolio.
+   */
   public String handleGetPortfolioName() {
     String name;
     view.displayEnterNameForPortfolio();
@@ -108,6 +115,9 @@ public class HandlePortfolioCreation implements Command {
     return name;
   }
 
+  /**
+   * This function displays the list of stock companies in the stock market in our project.
+   */
   public void handleShowCompanies() {
     List<String> stockCompanyName = model.getStockCompanyName();
     for (int i = 0; i < stockCompanyName.size(); i++) {
@@ -116,6 +126,12 @@ public class HandlePortfolioCreation implements Command {
     view.displayEmptyLine();
   }
 
+  /**
+   * It asks the user for a company name and a number of stocks, and returns a list of strings
+   * containing the company name and the number of stocks.
+   *
+   * @return A list of strings.
+   */
   public List<String> handleAddACompanyStock() {
     sc.nextLine();
     String companyName;
@@ -148,6 +164,14 @@ public class HandlePortfolioCreation implements Command {
     return dataToAdd;
   }
 
+  /**
+   * This function takes in a list of lists of strings, a string, and a string, and adds the data to
+   * the portfolio.
+   *
+   * @param dataToAdd a list of lists of strings, where each list of strings is a row of data.
+   * @param name The name of the portfolio
+   * @param currentDate the date of the portfolio added
+   */
   public void addPortfolioData(List<List<String>> dataToAdd, String name, String currentDate) {
     model.addsFinalDataToPortfolio(dataToAdd, name, currentDate);
   }

@@ -323,8 +323,8 @@ public class View {
    * in proper format.
    */
   public void displayDataNotInProperFormat() {
-    this.out.println("The portfolio provided in the text file is not in proper format," + "please" +
-            " look at the documentation");
+    this.out.println("The portfolio provided in the text file is not in proper format," + "please"
+            + " look at the documentation");
     this.out.println();
   }
 
@@ -371,18 +371,19 @@ public class View {
    * symbol they inputted doesn't exist.
    */
   public void displayCompanyTickerSymbolIsNotValid() {
-    this.out.println("Company associated with this ticker symbol doesn't exists. Please input the" +
-            " correct ticker symbol.");
+    this.out.println("Company associated with this ticker symbol doesn't exists. Please input " +
+            "the" + " correct ticker symbol.");
     this.out.println();
   }
 
-  /**
-   *
-   */
-  public void dateSelectionMenu() {
+  // Asking the user to enter the ticker symbol of the company.
+  public void askForTickerSymbol() {
+    this.out.println("Enter ticker symbol for the company:");
+    this.out.println();
+  }
+  public void dateSelectionMenu(){
     this.out.println("1. Enter the Date");
     this.out.println("2. Exit");
   }
-
 }
 

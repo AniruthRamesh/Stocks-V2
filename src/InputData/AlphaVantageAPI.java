@@ -5,6 +5,9 @@ import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+/**
+ * It takes a company name as a parameter, and returns a string of the company's stock data.
+ */
 public class AlphaVantageAPI implements InputDataSource {
   @Override
   public String getData(String companyName) {

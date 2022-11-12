@@ -10,6 +10,10 @@ import java.util.Scanner;
 import Model.Model;
 import View.View;
 
+/**
+ * It handles the creation of a mutable portfolio. Stocks can be added or deleted from this
+ * portfolio.
+ */
 public class HandleMutablePortfolioCreation implements Command {
   Model model;
   View view;

@@ -8,6 +8,9 @@ import java.util.Scanner;
 import Model.Model;
 import View.View;
 
+/**
+ * This class handles the total stock value display command.
+ */
 public class HandleTotalStockValueDisplay implements Command {
   Model model;
   View view;

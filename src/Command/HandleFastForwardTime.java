@@ -7,6 +7,10 @@ import java.util.Scanner;
 import Model.Model;
 import View.View;
 
+/**
+ * It takes in a date from the user, checks if it's valid, and if it is, it sets the current date to
+ * that date and show value of stocks on that date.
+ */
 public class HandleFastForwardTime implements Command {
   final Model model;
   final View view;

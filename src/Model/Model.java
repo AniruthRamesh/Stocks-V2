@@ -327,4 +327,32 @@ public interface Model {
    */
   void putNameInCompanyInPortfolio(String name);
 
+  /**
+   * Getter for flexiblePort.
+   * @return Map of String,and value containing map of string and list.
+   */
+  Map<String,Map<String,List<String>>> getFlexiblePort();
+
+  /**
+   * Setter for flexiblePort.
+   * @param name String, containing name of the portfolio.
+   * @param companyDetails Map of String and List of strings containing unique key,company stock.
+   */
+  void setFlexibleNewPortfolio(String name,Map<String,List<String>> companyDetails);
+
+  /**
+   * Another setter for flexiblePort given different Set of arguments.
+   * @param portfolioName String, portfolio name.
+   * @param keyName String, unique key to identify company stocks.
+   * @param val List of Strings containing company StockValue.
+   */
+  void setFlexiblePortfolioWith(String portfolioName,String keyName,List<String> val);
+
+  /**
+   * Checker to find if flexiblePort contains certain key.
+   * @param name String, portfolio name.
+   * @return boolean, True or false representing if portfolio contains a key or not.
+   */
+  boolean flexiblePortContainsCertainKey(String name);
+
 }

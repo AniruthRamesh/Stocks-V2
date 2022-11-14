@@ -168,7 +168,7 @@ public class HandleSellPortfolio implements Command {
         boolean checker = model.setContainsGivenDate(dateWishToChange);
         if (checker) {
           System.out.println("sssssssssssssssssssssssssss");
-          List<List<String>> vv =model.getParticularFlexiblePortfolio(portfolioName);
+          List<List<String>> vv = model.getParticularFlexiblePortfolio(portfolioName);
           System.out.println(vv);
         } else {
           view.displayNoStockDataForGivenDate();

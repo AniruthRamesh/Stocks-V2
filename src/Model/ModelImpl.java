@@ -51,7 +51,7 @@ public class ModelImpl implements Model {
           "List all portfolios", "Create Flexible Portfolio", "Sell Stocks from a Portfolio"
           , "Determine Cost Basis", "Exit");
 
-  Map<String,Map<String,List<String>>> flexiblePort = new HashMap<>();
+  Map<String, Map<String, List<String>>> flexiblePort = new HashMap<>();
   Map<String, List<List<String>>> flexiblePortfolio = new HashMap<>();
   List<HashMap<String, String>> apiStockData = new ArrayList<>();
 
@@ -59,18 +59,18 @@ public class ModelImpl implements Model {
 
   Set<String> companiesInPortfolio = new HashSet<>();
 
-  public Map<String,Map<String,List<String>>> getFlexiblePort(){
+  public Map<String, Map<String, List<String>>> getFlexiblePort() {
     return flexiblePort;
   }
 
   @Override
   public void setFlexibleNewPortfolio(String name, Map<String, List<String>> companyDetails) {
-    flexiblePort.put(name,companyDetails);
+    flexiblePort.put(name, companyDetails);
   }
 
   @Override
   public void setFlexiblePortfolioWith(String portfolioName, String keyName, List<String> val) {
-    flexiblePort.get(portfolioName).put(keyName,val);
+    flexiblePort.get(portfolioName).put(keyName, val);
   }
 
   @Override
@@ -457,7 +457,7 @@ public class ModelImpl implements Model {
   }
 
   @Override
-  public  List<List<String>> getParticularFlexiblePortfolio(String name) {
+  public List<List<String>> getParticularFlexiblePortfolio(String name) {
     return flexiblePortfolio.get(name);
   }
 

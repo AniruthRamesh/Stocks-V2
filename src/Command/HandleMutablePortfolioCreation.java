@@ -1,6 +1,5 @@
 package Command;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.InputMismatchException;
 import java.util.List;
@@ -154,22 +153,23 @@ public class HandleMutablePortfolioCreation implements Command {
             break;
           }
           numberOfStocks = model.helper(numberOfStocks);
-          String alreadyExisting = companyName+dateVal+numberOfStocks;
+          String alreadyExisting = companyName + dateVal + numberOfStocks;
 
           if (stockData.containsKey(dateVal)) {
             Map<String, Map<String, List<String>>> flexible = model.getFlexiblePort();
             if (flexible.containsKey(portfolioName)) {
-              Map<String,List<String>> portfolio = flexible.get(portfolioName);
-              if(portfolio.containsKey(alreadyExisting)){
-                numberOfStocks+=numberOfStocks;
+              Map<String, List<String>> portfolio = flexible.get(portfolioName);
+              if (portfolio.containsKey(alreadyExisting)) {
+                numberOfStocks += numberOfStocks;
               }
-              model.setFlexiblePortfolioWith(portfolioName,alreadyExisting,
-                      List.of(companyName,String.valueOf(numberOfStocks),dateVal));
+              model.setFlexiblePortfolioWith(portfolioName, alreadyExisting,
+                      List.of(companyName, String.valueOf(numberOfStocks), dateVal));
 
             } else {
-              Map<String,List<String>> val = new HashMap<>();
-              val.put(alreadyExisting,List.of(companyName,String.valueOf(numberOfStocks),dateVal));
-              model.setFlexibleNewPortfolio(portfolioName,val);
+              Map<String, List<String>> val = new HashMap<>();
+              val.put(alreadyExisting, List.of(companyName, String.valueOf(numberOfStocks),
+                      dateVal));
+              model.setFlexibleNewPortfolio(portfolioName, val);
             }
 
 

@@ -51,12 +51,32 @@ public class ModelImpl implements Model {
           "List all portfolios", "Create Flexible Portfolio", "Sell Stocks from a Portfolio"
           , "Determine Cost Basis", "Exit");
 
+  Map<String,Map<String,List<String>>> flexiblePort = new HashMap<>();
   Map<String, List<List<String>>> flexiblePortfolio = new HashMap<>();
   List<HashMap<String, String>> apiStockData = new ArrayList<>();
 
   Map<String, Integer> tickerFinder = new HashMap<>();
 
   Set<String> companiesInPortfolio = new HashSet<>();
+
+  public Map<String,Map<String,List<String>>> getFlexiblePort(){
+    return flexiblePort;
+  }
+
+  @Override
+  public void setFlexibleNewPortfolio(String name, Map<String, List<String>> companyDetails) {
+    flexiblePort.put(name,companyDetails);
+  }
+
+  @Override
+  public void setFlexiblePortfolioWith(String portfolioName, String keyName, List<String> val) {
+    flexiblePort.get(portfolioName).put(keyName,val);
+  }
+
+  @Override
+  public boolean flexiblePortContainsCertainKey(String name) {
+    return flexiblePort.containsKey(name);
+  }
 
   public Map<String, List<List<String>>> getFlexiblePortfolio() {
     return flexiblePortfolio;

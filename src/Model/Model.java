@@ -327,4 +327,5 @@ public interface Model {
    */
   void putNameInCompanyInPortfolio(String name);
 
+  List<List<String>> getParticularFlexiblePortfolio(String name);
 }

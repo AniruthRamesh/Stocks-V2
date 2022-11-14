@@ -1,6 +1,7 @@
 package Command;
 
 import java.util.InputMismatchException;
+import java.util.List;
 import java.util.Scanner;
 
 import Model.Model;
@@ -35,7 +36,7 @@ public class HandleSellPortfolio implements Command {
             nameEntered = true;
           }
           if (nameEntered) {
-            handleSellPortfolioOptions();
+            handleSellPortfolioOptions(name);
             portfolioOptionExit = true;
             break;
           }
@@ -69,7 +70,7 @@ public class HandleSellPortfolio implements Command {
     return name;
   }
 
-  public void handleSellPortfolioOptions() {
+  public void handleSellPortfolioOptions(String portfolioName) {
     String currentDate = model.getCurrentDate();
     boolean optionExit = false;
 
@@ -85,7 +86,7 @@ public class HandleSellPortfolio implements Command {
           sc.nextLine();
           name = sc.nextLine();
           if (handleEnterTickerSymbol(name)) {
-            handleDateSelection(name);
+            handleDateSelection(portfolioName);
           } else {
             view.displayCompanyTickerSymbolIsNotValid();
           }
@@ -167,6 +168,8 @@ public class HandleSellPortfolio implements Command {
         boolean checker = model.setContainsGivenDate(dateWishToChange);
         if (checker) {
           System.out.println("sssssssssssssssssssssssssss");
+          List<List<String>> vv =model.getParticularFlexiblePortfolio(portfolioName);
+          System.out.println(vv);
         } else {
           view.displayNoStockDataForGivenDate();
         }

@@ -436,4 +436,9 @@ public class ModelImpl implements Model {
     companiesInPortfolio.add(name);
   }
 
+  @Override
+  public  List<List<String>> getParticularFlexiblePortfolio(String name) {
+    return flexiblePortfolio.get(name);
+  }
+
 }
